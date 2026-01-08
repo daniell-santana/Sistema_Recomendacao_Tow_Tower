@@ -5,7 +5,7 @@ Este projeto demonstra um exemplo de sistema de recomendação híbrido para ofe
 ### 🔄 Fluxo
 ```mermaid
 flowchart TB
-    A[Entrada do Usuário<br/>Portal de Cursos] --> B[Coleta de Interações<br/>(Clicks, navegação, histórico)]
+    A[Entrada do Usuário<br/>Portal de Cursos] --> B[Coleta de Interações<br/>(Clicks, navegação, histórico, perfil)]
 
     subgraph TT[Two-Tower Retrieval Model]
         direction LR
