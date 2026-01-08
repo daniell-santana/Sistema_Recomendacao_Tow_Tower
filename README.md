@@ -29,7 +29,9 @@ Este projeto demonstra um exemplo de sistema de recomendação híbrido para ofe
 ## 📁 Estrutura do Código
 src/
 ├── sistema_recomendacao.py # Classe principal com lógica de recomendação
+
 ├── app_streamlit.py # Interface web interativa
+
 └── main_cli.py # Interface de linha de comando
 
 
