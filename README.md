@@ -1,20 +1,48 @@
-# Sistema de Recomendação de Cursos
+# Sistema de Recomendação de Cursos Educacionais
 
-Sistema híbrido de recomendação para instituições de ensino que combina:
-- Filtragem baseada em atributos (local, horário, data)
-- Similaridade semântica de títulos de cursos
-- Trilhas de formação profissional
+Este projeto demonstra um exemplo de sistema de recomendação híbrido, combinando múltiplas estratégias de matching entre interesses de alunos e ofertas de cursos.
 
-## Funcionalidades
-1. **Recomendações baseadas em preferências**: Match exato de curso + local + horário
-2. **Recomendações por similaridade**: Cursos semanticamente similares
-3. **Recomendações por trilha profissional**: Cursos da mesma área de formação
-4. **Recomendações EAD**: Cursos a distância similares
-5. **Filtro geográfico**: Distância entre unidades
+## 🎯 Funcionalidades
 
-## Tecnologias
+- **Matching Exato**: Curso + Localidade + Horário + turno + Data
+- **Similaridade Semântica**: Embeddings de títulos de cursos
+- **Trilhas Profissionais**: Cursos relacionados por área de formação
+- **Filtro Geográfico**: Distância entre unidades
+- **Modalidade EAD**: Recomendações para ensino a distância
+
+## 🏗️ Arquitetura
+
+1. **Carregamento e Pré-processamento** de bases (cursos, ofertas, interesses)
+2. **Geração de Embeddings** usando modelo multilingual SentenceTransformer
+3. **Múltiplas Estratégias de Matching** hierárquico
+4. **Interface Streamlit** para demonstração interativa
+5. **CLI** para uso em batch
+
+## 🔧 Tecnologias
+
 - Python 3.10+
-- SentenceTransformer (paraphrase-multilingual-mpnet-base-v2)
-- Streamlit (interface web)
-- Pandas, NumPy
-- Scikit-learn (cosine similarity)
+- SentenceTransformers para embeddings
+- Streamlit para interface web
+- Pandas, NumPy para manipulação de dados
+- Scikit-learn para similaridade cosseno
+
+## 📁 Estrutura do Código
+src/
+├── sistema_recomendacao.py # Classe principal com lógica de recomendação
+├── app_streamlit.py # Interface web interativa
+└── main_cli.py # Interface de linha de comando
+
+
+📊 Estratégias de Recomendação
+1. O sistema implementa 7 níveis de recomendação:
+2. Curso + Unidade: Match completo na mesma localidade
+3. Curso sem Unidade: Mesmo curso em outras localidades
+4. Ocupações Similares: Cursos da mesma trilha profissional
+5. Títulos Similares: Cursos com nomes semanticamente próximos
+6. EAD: Oferece cursos, quando o curso de interesse do usuário está distante da sua localidade
+
+🔍 Detalhes Técnicos
+1. Modelo de Embeddings: paraphrase-multilingual-mpnet-base-v2
+2. Similaridade: Cosine similarity sobre embeddings
+3. Pré-processamento: Filtragem por data de oferta do curso, modalidade de ensino, área, nível, status
+4. Ordenação: Prioridade por tipo de match + distância (Geoloc)
