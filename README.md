@@ -2,50 +2,26 @@
 
 Este projeto demonstra um exemplo de sistema de recomendação híbrido para oferta de cursos educacionais, combinando múltiplas estratégias de matching entre interesses de alunos e ofertas de cursos.
 
+### 🔄 Fluxo
+```mermaid
+flowchart TB
+    A[Entrada<br/>Portal de Cursos<br/>(Usuário acessa)] --> B[Coleta de Dados<br/>(Clicks, histórico, perfil)]
 
- ┌──────────────────────┐
- │      Entrada         │
- │  Portal de Cursos    │
- │  (usuário acessa)    │
- └─────────┬────────────┘
-           │
-           ▼
-   ┌──────────────────┐
-   │ Coleta de Dados  │   (Clicks, histórico, perfil)
-   └─────────┬────────┘
-             │
-             ▼
- ┌────────────────────────┐
- │   Two-Towers Model     │
- │                        │
- │   ┌──────────┐         │
- │   │ User     │         │
- │   │ Tower    │         │
- │   └────┬─────┘         │
- │        │ Embedding     │
- │        ▼               │
- │   ┌──────────┐         │
- │   │ Item     │         │
- │   │ Tower    │         │
- │   └────┬─────┘         │
- │        │ Embedding     │
- │        ▼               │
- │   ┌────────────────┐   │
- │   │ Similarity /   │   │
- │   │ Scoring Layer  │   │
- │   │                │   |
- │   └────────┬───────┘   │
- │            │ Rankings  │
- │            ▼           │
- └────────────────────────┘
-              │
-              ▼
-     ┌─────────────────┐
-     │ Recomendações   │
-     │ (ofertas de     │
-     │ cursos mostradas)│
-     └─────────────────┘
+    subgraph TT[Two-Towers Model]
+        C[User Tower] --> E[User Embedding]
+        D[Item Tower] --> F[Item Embedding]
 
+        E --> G[Similarity / Scoring Layer]
+        F --> G
+    end
+
+    B --> C
+    B --> D
+
+    G --> H[Rankings]
+    H --> I[Recomendações<br/>(Cursos exibidos)]
+```
+---
 
 ## 🎯 Funcionalidades
 
