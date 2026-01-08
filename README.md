@@ -1,6 +1,6 @@
-# Sistema de Recomendação de Cursos Educacionais
+# Sistema de Recomendação Two-tower
 
-Este projeto demonstra um exemplo de sistema de recomendação híbrido, combinando múltiplas estratégias de matching entre interesses de alunos e ofertas de cursos.
+Este projeto demonstra um exemplo de sistema de recomendação híbrido para oferta de cursos educacionais, combinando múltiplas estratégias de matching entre interesses de alunos e ofertas de cursos.
 
 ## 🎯 Funcionalidades
 
