@@ -1,3 +1,5 @@
+[![Figma](https://img.shields.io/badge/Figma-Design-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://stew-render-19568259.figma.site/)
+
 # Sistema de Recomendação Two-tower
 
 Este projeto demonstra um exemplo de sistema de recomendação híbrido para oferta de cursos educacionais, combinando múltiplas estratégias de matching entre interesses de alunos e ofertas de cursos.
