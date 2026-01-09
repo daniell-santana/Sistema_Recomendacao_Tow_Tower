@@ -15,7 +15,7 @@ flowchart TB
             D --> E[Embedding do Usuário]
         end
 
-        subgraph IT[Representação do Item]
+        subgraph IT[Torre do Item]
             F[Características do Curso] --> G[Codificador do Item]
             G --> H[Embedding do Item]
         end
